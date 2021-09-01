@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="col-md-12 justify-content-center">
-        {{-- <div class="card">
+        <div class="card">
+            @include('partials.message')
             <div class="card-header">{{ __('Dashboard') }}</div>
 
             <div class="card-body">
@@ -14,7 +15,7 @@
 
                 {{ __('You are logged in!') }}
             </div>
-        </div> --}}
+        </div>
     </div>
 
 @endsection

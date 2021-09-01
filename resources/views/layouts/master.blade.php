@@ -75,7 +75,7 @@
                 <div id="collapseSystem" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="#">Conutry</a>
+                        <a class="collapse-item" href="{{ route('countries.index') }}">Conutry</a>
                         <a class="collapse-item" href="#">State</a>
                         <a class="collapse-item" href="#">City</a>
                         <a class="collapse-item" href="#">Department</a>
@@ -94,7 +94,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="#">User</a>
+                        <a class="collapse-item" href="{{ route('users.index') }}">User</a>
                         <a class="collapse-item" href="#">Roll</a>
                         <a class="collapse-item" href="#">Permission</a>
                     </div>
@@ -148,9 +148,7 @@
             {{-- <hr class="sidebar-divider d-none d-md-block"> --}}
 
             <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+
 
             <!-- Sidebar Message -->
             {{-- <div class="sidebar-card d-none d-lg-flex">
@@ -171,8 +169,12 @@
             <div id="content">
 
                 <!-- Topbar -->
+                
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
+                    {{-- Sidebar collapse button --}}
+                    <div class="text-center d-none d-md-inline">
+                        <button class="rounded-circle border-0 btn-secondary" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+                    </div>
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
@@ -342,7 +344,8 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->user_name }}</span>
+                                <span
+                                    class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->user_name }}</span>
                                 <img class="img-profile rounded-circle" src="{{ asset('images/default/user.svg') }}">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -386,10 +389,10 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
+                   {{--  <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                    </div>
+                    </div> --}}
 
                     <!-- Content Row -->
 
