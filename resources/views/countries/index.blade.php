@@ -40,7 +40,7 @@
                                 <td>{{ $country->name }}</td>
                                 <td class="d-flex justify-content-betweein align-item-center">
                                     <div>
-                                        <a href="{{ route('countries.edit', $country->id) }}/"><i class="fas fa-user-edit"></i></a>
+                                        <a href="{{ route('countries.edit', $country->id) }}/"><i class="fas fa-user-edit fa-lg"></i></a>
                                     </div>
                                     <div>
                                         <form action="{{ route('countries.destroy', $country->id) }}" method="POST">
@@ -48,7 +48,7 @@
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-xs py-0">
                                                 <span>
-                                                    <i class="fas fa-trash">
+                                                    <i class="fas fa-trash fa-lg">
                                                     </i>
                                                 </span>
                                             </button>

@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\HomeController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -32,4 +34,5 @@ Route::middleware(['auth'])->group(function () {
         'countries'        => CountryController::class
 
     ]);
+    Route::get('profile/{id}', [HomeController::class, 'profile'])->name('profile');
 });
