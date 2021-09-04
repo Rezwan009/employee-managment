@@ -1,5 +1,7 @@
 @extends('layouts.master')
-
+@section('css')
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+@endsection
 @section('content')
     <!-- Page Heading -->
     <div class="col-md-12 d-sm-flex align-items-center justify-content-between mb-4">
@@ -23,7 +25,7 @@
             </div>
 
             <div class="card-body">
-                <table class="table table-hover">
+                <table class="table table-hover" id="userTable">
                     <thead>
                         <tr>
                             <th scope="col">#S.No</th>
@@ -46,7 +48,8 @@
                                 <td>{{ $user->created_at }}</td>
                                 <td class="d-flex justify-content-betweein align-item-center">
                                     <div>
-                                        <a href="{{ route('users.edit', $user->id) }}/"><i class="fas fa-user-edit fa-lg"></i></a>
+                                        <a href="{{ route('users.edit', $user->id) }}/"><i
+                                                class="fas fa-user-edit fa-lg"></i></a>
                                     </div>
                                     <div>
                                         <form action="{{ route('users.destroy', $user->id) }}" method="POST">
@@ -75,3 +78,11 @@
     </div>
 
 @endsection
+@push('scripts')
+    <script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#userTable').DataTable();
+        });
+    </script>
+@endpush
