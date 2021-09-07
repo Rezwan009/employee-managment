@@ -53,7 +53,7 @@
             </li>
             <hr class="sidebar-divider my-0">
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/employees">
                     <i class="fas fa-fw fa-users-cog"></i>
                     <span>Employee management</span></a>
             </li>
@@ -175,8 +175,8 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                     {{-- Sidebar collapse button --}}
                     <div class="text-center d-none d-md-inline">
-                        <button class="rounded-circle border-0 btn-secondary" id="sidebarToggle"><i
-                                class="fas fa-bars"></i></button>
+                        <a class="nav-link" id="sidebarToggle" style="cursor: pointer;color:rgba(0,0,0,.5);"><i
+                                class="fas fa-bars"></i></a>
                     </div>
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -401,7 +401,9 @@
                     <!-- Content Row -->
 
                     <div class="row">
+
                         @yield('content')
+
                     </div>
                 </div>
                 <!-- /.container-fluid -->
@@ -453,17 +455,17 @@
     <!-- Bootstrap core JavaScript-->
     <script src="{{ mix('js/app.js') }}"></script>
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    {{-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> --}}
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
 
-    <!-- Page level plugins -->
+    {{-- <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script> --}}
     @stack('scripts')
 </body>
 

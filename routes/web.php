@@ -35,4 +35,8 @@ Route::middleware(['auth'])->group(function () {
 
     ]);
     Route::get('profile/{id}', [HomeController::class, 'profile'])->name('profile');
+
+    Route::get('{any}', function ($id) {
+        return view('employees.index');
+    })->where('{any}', '.*');
 });
