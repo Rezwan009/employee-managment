@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\Backend\UserController;
-use App\Http\Controllers\CountryController;
+use App\Http\Controllers\Backend\CountryController;
+use App\Http\Controllers\Backend\StateController;
 use App\Http\Controllers\HomeController;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,7 +31,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resources([
 
         'users'            => UserController::class,
-        'countries'        => CountryController::class
+        'countries'        => CountryController::class,
+        'states'           => StateController::class
 
     ]);
     Route::get('profile/{id}', [HomeController::class, 'profile'])->name('profile');
